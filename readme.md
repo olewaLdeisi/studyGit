@@ -48,3 +48,22 @@
   + `git stash pop` 恢复的同时把stash内容也删了  
 ## 标签管理
 + `git tag 标签名` 给当前分支最新提交的commit打标签, 后可加commit id
++ `git show <tagname>` 查看标签信息, 用`-a`指定标签名，`-m`指定说明文字:
+ `git tag -a v0.1 -m "version 0.1 released" 1094adb`
++ `git tag -d v0.1` 删除标签(本地)
++ `git push origin v1.0` 推送标签 
++ `git push origin --tags` 推送所有未推送标签
++ `git push origin :refs/tags/v0.9` 若标签已推送，想删除需先删除本地`git
+  tag -d v0.9`   
+## 自定义git
++ `git config --global color.ui true` git显示颜色
++ 工作区根目录下创建`.gitignore`[gitignore](https://github.com/github/gitignore)
+  [git教程](https://www.liaoxuefeng.com/wiki/896043488029600/900004590234208)
++ 忽略文件的原则是: 
+  1.  忽略操作系统自动生成的文件，比如缩略图等；
+  2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
+  3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件  
++ `git config --global alias.st status` 配置别名，st代替status
++ [搭建git服务器](https://www.liaoxuefeng.com/wiki/896043488029600/899998870925664)
++ [管理公钥Gitosis](https://github.com/res0nat0r/gitosis)
++ [控制权限Gitolite](https://github.com/sitaramc/gitolite)
