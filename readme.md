@@ -25,12 +25,26 @@
   本地仓库关联远程仓库
 + `git push origin master` 提交到远程仓
 + `git clone git@github.com:michaelliao/gitskills.git` 克隆到本地仓   
++ `git remote` 或者 `git remote -v `查看远程库信息
++ `git push origin 分支名` 推送到分支
++ `git checkout -b dev origin/dev` 创建远程`origin`的`dev`分支到本地
++ `git pull` 抓取最新提交
++ `git branch --set-upstream-to=origin/dev dev`
+  指定本地`dev`分支与远程`origin/dev`分支的链接
++ `git rebase` 可以把本地未push的分叉提交历史整理成直线 [rebase](http://gitbook.liuhui998.com/4_2.html)
 ## 4. 分支管理
 + `git checkout -b 分支名` 创建分支，加上-b参数表示创建并切换，相当于执行`git
   branch 分支名` 和 `git checkout 分支名`
 + `git branch` 查看当前分支
-+ `git branch -d dev` 删除分支
++ `git branch -d dev` 删除分支, `-D`强制删除
 + `git checkout 分支名` 切换分支
 + `git merge 分支名` 合并'分支名'到当前分支
 + `git log --graph --pretty=oneline --abbrev-commit` 查看合并分支情况
 + `git merge --no-ff -m "merge with no-ff" dev` 禁用Fast forward 
++ `git stash` 保存工作现场, 可切换别的分支进行修改提交后，返回原来现场
+  + `git stash list` 查看刚才的工作现场
+  + `git stash apply` 恢复，但是恢复后，stash内容并不删除，你需要用`git
+    stash drop`来删除, `git stash apply stash@{0}` 恢复到指定的stash
+  + `git stash pop` 恢复的同时把stash内容也删了  
+## 标签管理
++ `git tag 标签名` 给当前分支最新提交的commit打标签, 后可加commit id
