@@ -9,3 +9,5 @@
 ## 2. 版本回退
 + `git reset --hard HEAD^` 退回到上一个版本，上上个版本则是两个`^`
 + `git checkout -- file` 回退改文件最近一次commit或add的状态
++ 回退add
++ 回退commit
